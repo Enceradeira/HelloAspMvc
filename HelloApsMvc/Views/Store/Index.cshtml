@@ -1,0 +1,12 @@
+﻿@using System.Web.UI.WebControls
+@model IEnumerable<HelloApsMvc.Models.Store.Album>
+@{
+    ViewBag.Title = "Albums";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@foreach (var album in Model)
+{
+    <li>@album.Title</li>
+}
