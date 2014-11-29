@@ -23,13 +23,11 @@ namespace HelloApsMvc.Controllers
 
 		public ActionResult Index()
 		{
-			var albums = new[]
+			return View(new[]
 			{
-				new Album { Title = "Timeless" },
+				new Album { Title = "Timeless" }, 
 				new Album { Title = "Somthing gonna give" }
-			};
-			ViewBag.Model = albums;
-			return View(albums);
+			});
 		}
 	}
 }
