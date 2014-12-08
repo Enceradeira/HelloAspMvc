@@ -15,15 +15,6 @@ namespace HelloApsMvc.Tests.Features
 
 		private Process _iisProcess;
 
-		private string GetAbsoluteUrl(string relativeUrl)
-		{
-			if (!relativeUrl.StartsWith("/"))
-			{
-				relativeUrl = "/" + relativeUrl;
-			}
-			return String.Format("http://localhost:{0}{1}", 49392, relativeUrl);
-		}
-
 		private string GetApplicationPath(string applicationName)
 		{
 			var solutionFolder = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)));

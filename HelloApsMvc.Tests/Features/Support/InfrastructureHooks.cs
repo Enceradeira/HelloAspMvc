@@ -1,7 +1,5 @@
 ﻿using System;
-
 using HelloApsMvc.Tests.Features.Support;
-
 using TechTalk.SpecFlow;
 
 namespace HelloApsMvc.Tests.Features
@@ -19,8 +17,10 @@ namespace HelloApsMvc.Tests.Features
 		[BeforeTestRun]
 		public static void BeforeTestRun()
 		{
+			var cleaning = DatabaseCleaner.Clean();
 			IIS.Instance.Start();
 			Driver.Instance.Start();
+			cleaning.Wait();
 		}
 	}
 }
