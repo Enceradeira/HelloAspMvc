@@ -1,5 +1,7 @@
 ﻿using System;
 
+using HelloApsMvc.Tests.Features.Support;
+
 using TechTalk.SpecFlow;
 
 namespace HelloApsMvc.Tests.Features
@@ -11,12 +13,14 @@ namespace HelloApsMvc.Tests.Features
 		public static void AfterTestRun()
 		{
 			IIS.Instance.Stop();
+			Driver.Instance.Stop();
 		}
 
 		[BeforeTestRun]
 		public static void BeforeTestRun()
 		{
 			IIS.Instance.Start();
+			Driver.Instance.Start();
 		}
 	}
 }
