@@ -2,4 +2,4 @@
 	
 Scenario: Start Web-Site
 	Given I navigate to the website
-	Then I see a list of persons
+	Then I see a list of books

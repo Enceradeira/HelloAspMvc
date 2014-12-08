@@ -1,18 +1,15 @@
 ﻿using System;
-using System.IO;
-using System.Threading;
 
 using HelloApsMvc.Tests.Features;
-using HelloApsMvc.Tests.Features.Support;
 
-using OpenQA.Selenium.Chrome;
+using NUnit.Framework;
 
 using TechTalk.SpecFlow;
 
 namespace HelloApsMvc.Tests
 {
 	[Binding]
-	public class NavigationSteps: WebSteps
+	public class NavigationSteps : WebSteps
 	{
 		[Given(@"I navigate to the website")]
 		public void GivenINavigateToTheWebsite()
@@ -20,11 +17,11 @@ namespace HelloApsMvc.Tests
 			Driver.Navigate().GoToUrl("http://localhost:49392/");
 		}
 
-		[Then(@"I see a list of persons")]
+		[Then(@"I see a list of books")]
 		public void ThenISeeAListOfPersons()
 		{
-			ScenarioContext.Current.Pending();
+			var element = Driver.FindElementById("TitleHeader");
+			Assert.That(element, Is.Not.Null);
 		}
-
 	}
 }
